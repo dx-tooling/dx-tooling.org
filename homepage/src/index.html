@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+
+<head>
+    <title>DX·Tooling - Developer Experience Tools & Solutions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DX Tooling provides a suite of developer experience tools and solutions, including CLI tools, monitoring solutions, and AI-powered browser automation.">
+
+    <!-- Include FOUC guard script -->
+    <include src="partials/theme-fouc-guard.html"></include>
+
+    <!-- Link to CSS will be injected here by HtmlWebpackPlugin -->
+</head>
+
+<body class="h-full bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+
+<div class="container mx-auto px-4 py-12 max-w-5xl">
+
+    <header class="mb-12 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">DX·Tooling</h1>
+        <!-- Theme Toggle Controller -->
+        <div data-controller="theme">
+            <button
+                data-theme-target="toggleButton"
+                data-action="click->theme#toggle"
+                class="px-4 py-2 font-semibold text-sm text-white bg-purple-600 rounded-md shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-offset-gray-800 cursor-pointer"
+            >
+                <!-- Text set by controller -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="mb-16 py-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-lg" id="hero">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">Developer Experience Tools & Solutions</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">A collection of open-source tools and SaaS solutions designed to enhance developer productivity and streamline development workflows.</p>
+            <a href="#projects" class="inline-block px-8 py-4 font-bold text-lg text-white bg-blue-600 rounded-md shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 transition duration-150 ease-in-out cursor-pointer">Explore Our Projects</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="mb-16" id="projects">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">Our Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- DX CLI -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-green-500 dark:bg-green-600">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.4.604.4.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.4.959-.4v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">DX CLI</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Open Source</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">A lightweight, extensible command-line interface for standardizing development tasks across your team and projects.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 rounded">CLI</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 rounded">Developer Tools</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 rounded">OSS</span>
+                </div>
+                <a href="https://github.com/dx-tooling/dxcli" target="_blank" class="inline-block text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">View on GitHub →</a>
+            </div>
+
+            <!-- Landing Pages AI Template -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500 dark:bg-purple-600">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Landing Pages AI Template</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Open Source</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">A modern template and styleguide for building static marketing and product landing pages, optimized for AI-assisted development.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 rounded">Web Development</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 rounded">AI Tools</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 rounded">OSS</span>
+                </div>
+                <a href="https://github.com/dx-tooling/landingpages-ai-template" target="_blank" class="inline-block text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">View on GitHub →</a>
+            </div>
+
+            <!-- Platform Problem Monitoring -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 dark:bg-blue-600">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Platform Problem Monitoring</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Open Source</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">A proactive monitoring solution that analyzes Elasticsearch logs, detects patterns, and delivers concise email reports about your platform's health.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded">Monitoring</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded">Elasticsearch</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded">OSS</span>
+                </div>
+                <a href="https://github.com/dx-tooling/platform-problem-monitoring-core" target="_blank" class="inline-block text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">View on GitHub →</a>
+            </div>
+
+            <!-- Playwright MCP Cloud -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500 dark:bg-indigo-600">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">MCP as a Service</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">SaaS</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">Deploy Playwright MCP Servers in the cloud with zero setup. Enable AI agents to control real browsers with full visual feedback through VNC.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded">AI Tools</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded">Browser Automation</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 rounded">SaaS</span>
+                </div>
+                <a href="https://mcp-as-a-service.com" target="_blank" class="inline-block text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">Visit Website →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="mb-16" id="features">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">Why Choose DX·Tooling?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-green-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">Developer-First</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Tools built by developers, for developers, focusing on real-world needs and workflows.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">Open Source Focus</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Most of our tools are open source, promoting transparency and community collaboration.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-purple-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">AI Friendly</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Tools designed to work seamlessly with AI assistants and modern development workflows.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mb-16 py-12 bg-indigo-600 dark:bg-indigo-800 rounded-lg text-center text-white" id="cta">
+        <div class="container mx-auto px-6 max-w-xl">
+            <h2 class="text-3xl font-bold mb-4">Ready to Enhance Your Development Workflow?</h2>
+            <p class="mb-6 text-indigo-100 dark:text-indigo-200">Explore our tools and solutions to streamline your development process and boost productivity.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/dx-tooling" target="_blank" class="px-6 py-3 font-semibold text-indigo-700 bg-white rounded-md shadow-md hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-indigo-700 dark:bg-indigo-100 dark:text-indigo-900 dark:hover:bg-indigo-200 transition duration-150 ease-in-out cursor-pointer">View on GitHub</a>
+                <a href="https://mcp-as-a-service.com" target="_blank" class="px-6 py-3 font-semibold text-white bg-indigo-500 rounded-md shadow-md hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-indigo-700 transition duration-150 ease-in-out cursor-pointer">Try Playwright MCP Cloud</a>
+            </div>
+        </div>
+    </section>
+
+</div> <!-- End Container -->
+
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-900 py-8">
+    <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400 text-sm">
+        <p data-controller="copyright">
+            © <span data-copyright-target="year">2025</span> <a href="https://manuel.kiessling.net">Manuel Kießling</a>. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- The script tag will be injected by HtmlWebpackPlugin -->
+</body>
+
+</html>
