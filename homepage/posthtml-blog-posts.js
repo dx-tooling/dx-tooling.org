@@ -19,22 +19,73 @@ export default function blogPostsPlugin() {
                     const filePath = path.join(blogDir, file);
                     const content = fs.readFileSync(filePath, "utf8");
 
-                    // Extract metadata from meta tags
-                    const titleMatch = content.match(/<meta name="blog:title" content="([^"]+)"/);
-                    const summaryMatch = content.match(/<meta name="blog:summary" content="([^"]+)"/);
-                    const dateMatch = content.match(/<meta name="blog:date" content="([^"]+)"/);
-                    const authorMatch = content.match(/<meta name="blog:author" content="([^"]+)"/);
-                    const tagsMatch = content.match(/<meta name="blog:tags" content="([^"]+)"/);
+                    // Extract metadata from standard schemas
+                    // Priority: Open Graph > Twitter > Standard meta > Schema.org JSON-LD
+
+                    // Open Graph (og:)
+                    const ogTitleMatch = content.match(/<meta property="og:title" content="([^"]+)"/);
+                    const ogDescriptionMatch = content.match(/<meta property="og:description" content="([^"]+)"/);
+                    const ogPublishedTimeMatch = content.match(
+                        /<meta property="article:published_time" content="([^"]+)"/,
+                    );
+                    const ogAuthorMatch = content.match(/<meta property="article:author" content="([^"]+)"/);
+                    const ogTags = content.match(/<meta property="article:tag" content="([^"]+)"/g);
+
+                    // Twitter Card (twitter:)
+                    const twitterTitleMatch = content.match(/<meta name="twitter:title" content="([^"]+)"/);
+                    const twitterDescriptionMatch = content.match(/<meta name="twitter:description" content="([^"]+)"/);
+
+                    // Standard meta tags
+                    const titleMatch = content.match(/<title>([^<]+)<\/title>/);
+                    const descriptionMatch = content.match(/<meta name="description" content="([^"]+)"/);
+                    const authorMatch = content.match(/<meta name="author" content="([^"]+)"/);
+                    const keywordsMatch = content.match(/<meta name="keywords" content="([^"]+)"/);
+
+                    // Blog system specific (read time)
                     const readTimeMatch = content.match(/<meta name="blog:readTime" content="([^"]+)"/);
 
-                    if (titleMatch && summaryMatch && dateMatch) {
+                    // Determine the best values to use
+                    const title = ogTitleMatch?.[1] || twitterTitleMatch?.[1] || titleMatch?.[1];
+                    const summary = ogDescriptionMatch?.[1] || twitterDescriptionMatch?.[1] || descriptionMatch?.[1];
+                    const date = ogPublishedTimeMatch?.[1];
+                    const author = ogAuthorMatch?.[1] || authorMatch?.[1];
+
+                    // Extract tags from multiple sources
+                    let tags = [];
+                    if (ogTags) {
+                        ogTags.forEach((tagMeta) => {
+                            const tagMatch = tagMeta.match(/content="([^"]+)"/);
+                            if (tagMatch) tags.push(tagMatch[1]);
+                        });
+                    } else if (keywordsMatch) {
+                        tags = keywordsMatch[1].split(",").map((tag) => tag.trim());
+                    }
+
+                    // Extract read time
+                    const readTime = readTimeMatch ? readTimeMatch[1] : "";
+
+                    // If we have the essential metadata, create the blog post
+                    if (title && summary && date) {
+                        // Parse the date and format it for display
+                        let displayDate;
+                        try {
+                            const dateObj = new Date(date);
+                            if (!isNaN(dateObj.getTime())) {
+                                displayDate = dateObj.toISOString().split("T")[0]; // YYYY-MM-DD format
+                            } else {
+                                displayDate = date; // Use original if parsing fails
+                            }
+                        } catch {
+                            displayDate = date; // Use original if parsing fails
+                        }
+
                         blogPosts.push({
-                            title: titleMatch[1],
-                            summary: summaryMatch[1],
-                            date: dateMatch[1],
-                            author: authorMatch ? authorMatch[1] : "Unknown",
-                            tags: tagsMatch ? tagsMatch[1].split(", ") : [],
-                            readTime: readTimeMatch ? readTimeMatch[1] : "",
+                            title: title,
+                            summary: summary,
+                            date: displayDate,
+                            author: author || "Unknown",
+                            tags: tags,
+                            readTime: readTime,
                             filename: file,
                             url: `blog/${file}`,
                         });
