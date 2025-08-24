@@ -1,16 +1,16 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-    static targets = ["year"]
+    static targets = ["year"];
 
-    declare readonly yearTarget: HTMLElement
+    declare readonly yearTarget: HTMLElement;
 
     connect() {
-        this.updateYear()
+        this.updateYear();
     }
 
     private updateYear() {
-        const currentYear = new Date().getFullYear()
-        this.yearTarget.textContent = currentYear.toString()
+        const currentYear = new Date().getFullYear();
+        this.yearTarget.textContent = currentYear.toString();
     }
-} 
+}

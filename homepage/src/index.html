@@ -17,18 +17,28 @@
 
 <div class="container mx-auto px-4 py-12 max-w-5xl">
 
-    <header class="mb-12 flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">DX·Tooling</h1>
-        <!-- Theme Toggle Controller -->
-        <div data-controller="theme">
-            <button
-                data-theme-target="toggleButton"
-                data-action="click->theme#toggle"
-                class="px-4 py-2 font-semibold text-sm text-white bg-purple-600 rounded-md shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-offset-gray-800 cursor-pointer"
-            >
-                <!-- Text set by controller -->
-            </button>
+    <header class="mb-12">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">DX·Tooling</h1>
+            <!-- Theme Toggle Controller -->
+            <div data-controller="theme">
+                <button
+                    data-theme-target="toggleButton"
+                    data-action="click->theme#toggle"
+                    class="px-4 py-2 font-semibold text-sm text-white bg-purple-600 rounded-md shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-offset-gray-800 cursor-pointer"
+                >
+                    <!-- Text set by controller -->
+                </button>
+            </div>
         </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="flex justify-center space-x-8">
+            <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">Projects</a>
+            <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">Features</a>
+            <a href="#blog" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">Blog</a>
+            <a href="#cta" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">Get Started</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -164,6 +174,17 @@
                     Tools designed to work seamlessly with AI assistants and modern development workflows.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="mb-16" id="blog">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">Latest Blog Posts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts-container">
+            <!-- Blog posts will be inserted here by the PostHTML plugin -->
+        </div>
+        <div class="text-center mt-8">
+            <a href="#blog" class="inline-block px-6 py-3 font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 rounded-md hover:bg-blue-100 dark:hover:bg-blue-900/50 transition duration-150 ease-in-out cursor-pointer">View All Posts</a>
         </div>
     </section>
 
