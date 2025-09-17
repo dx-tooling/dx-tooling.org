@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+
+<head>
+    <title>Software Engineering Workshop | DX·Tooling</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical, hands-on Software Engineering workshop focused on shipping better software, faster—covering architecture, testing, DevEx, and AI-assisted workflows.">
+
+    <!-- Include FOUC guard script -->
+    <include src="partials/theme-fouc-guard.html"></include>
+
+    <!-- Link to CSS will be injected here by HtmlWebpackPlugin -->
+</head>
+
+<body class="h-full bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+
+<div class="container mx-auto px-4 py-12 max-w-5xl">
+
+    <!-- Topbar -->
+    <header class="mb-10">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="../../index.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">← Back to Home</a>
+                <span class="hidden sm:inline text-gray-400">|</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">DX·Tooling</span>
+            </div>
+            <div data-controller="theme">
+                <button
+                    data-theme-target="toggleButton"
+                    data-action="click->theme#toggle"
+                    class="px-4 py-2 font-semibold text-sm text-white bg-purple-600 rounded-md shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-offset-gray-800 cursor-pointer"
+                >
+                    <!-- Text set by controller -->
+                </button>
+            </div>
+        </div>
+
+        <!-- Local Nav -->
+        <nav class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            <a href="#overview" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Overview</a>
+            <a href="#curriculum" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Curriculum</a>
+            <a href="#logistics" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Logistics</a>
+            <a href="#instructor" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Instructor</a>
+            <a href="#faq" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">FAQ</a>
+            <a href="#register" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Register Interest</a>
+        </nav>
+    </header>
+
+    <!-- Hero (with subtle effect) -->
+    <section
+        class="relative mb-16 text-center effects-container"
+        data-controller="hero-effects"
+        style="perspective: 1000px;"
+    >
+        <div
+            class="relative z-10 py-14 px-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-sm transition-transform duration-[1800ms] ease-in-out [.effects-active_&]:[transform:scale(1.02)]"
+            style="transform-style: preserve-3d;"
+        >
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-purple-700 dark:from-blue-700 dark:to-purple-800 bg-clip-text text-transparent [transform:translateZ(30px)] [.effects-active_&]:[transform:translateZ(0px)]">
+                Software Engineering Workshop
+            </h1>
+            <p class="text-lg text-gray-700 dark:text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed [transform:translateZ(60px)] [.effects-active_&]:[transform:translateZ(0px)]">
+                Ship better software, faster. A hands-on, opinionated workshop covering architecture, test strategy, DevEx, and AI-assisted development practices.
+            </p>
+            <a href="#register" class="inline-block px-8 py-4 font-bold text-lg text-white bg-blue-600 rounded-md shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 transition [transform:translateZ(40px)] [.effects-active_&]:[transform:translateZ(0px)] cursor-pointer">
+                Register Your Interest
+            </a>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">Private team sessions and public cohorts available.</p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">What You'll Get</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-green-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
+                <h3 class="text-xl font-semibold mb-2">Architecture & Design</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Design for change with modular boundaries, clear contracts, and pragmatic patterns.</p>
+            </div>
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.355a7.5 7.5 0 0 1-3 0m3 0a7.5 7.5 0 0 0-3 0m.375 0a7.5 7.5 0 0 1-3 0m3 0h.008v.008h-.008v-.008Zm-3 0a7.5 7.5 0 0 0-3 0m3 0h.008v.008h-.008v-.008Zm-3 0a7.5 7.5 0 0 1-3 0m3 0h.008v.008h-.008v-.008Zm-3 0a7.5 7.5 0 0 0-3 0m6 0a7.5 7.5 0 0 1-3 0m3 0a7.5 7.5 0 0 0-3 0" /></svg>
+                <h3 class="text-xl font-semibold mb-2">Testing that Scales</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Layered test strategy, fast feedback, and maintainable test suites.</p>
+            </div>
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-purple-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>
+                <h3 class="text-xl font-semibold mb-2">Developer Experience</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Tooling, workflows, and AI agents that accelerate teams without chaos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section id="curriculum" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-gray-200">Curriculum Outline</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-2">
+                <h3 class="text-lg font-semibold">Module 1 — Foundations</h3>
+                <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                    <li>Architecture principles for evolving systems</li>
+                    <li>Bounded contexts and module boundaries</li>
+                    <li>Error handling and observability basics</li>
+                </ul>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-2">
+                <h3 class="text-lg font-semibold">Module 2 — Testing Strategy</h3>
+                <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                    <li>Pyramids vs. trophies: choosing the right mix</li>
+                    <li>Fast unit tests, resilient integration tests</li>
+                    <li>CI hygiene and flake mitigation</li>
+                </ul>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-2">
+                <h3 class="text-lg font-semibold">Module 3 — Developer Experience</h3>
+                <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                    <li>Local DX: scripts, linters, pre-commit, containers</li>
+                    <li>Productive repos: structure, docs, templates</li>
+                    <li>Change velocity without regressions</li>
+                </ul>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-2">
+                <h3 class="text-lg font-semibold">Module 4 — AI in the Loop</h3>
+                <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                    <li>Effective prompts and guardrails</li>
+                    <li>Agentic workflows for tests and refactors</li>
+                    <li>Safety, reviews, and accountability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics -->
+    <section id="logistics" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Format & Logistics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Duration</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">1–2 days, live and interactive (onsite or remote).</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Audience</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Engineers, tech leads, and engineering managers.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Format</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Short talks, guided exercises, live demos, and Q&A.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor -->
+    <section id="instructor" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Your Instructor</h2>
+        <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-2">Manuel Kießling</h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">Software engineer and builder of developer tools at DX·Tooling. Focused on pragmatic architecture, developer experience, and AI-assisted workflows.</p>
+            <a href="https://manuel.kiessling.net" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">Visit Website →</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Frequently Asked Questions</h2>
+        <div class="space-y-4 max-w-3xl mx-auto">
+            <details class="bg-white dark:bg-gray-800 rounded-md shadow-sm p-4">
+                <summary class="font-medium cursor-pointer">Is this suitable for mixed-experience teams?</summary>
+                <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Yes. Content balances fundamentals with advanced practices; exercises scale by experience level.</p>
+            </details>
+            <details class="bg-white dark:bg-gray-800 rounded-md shadow-sm p-4">
+                <summary class="font-medium cursor-pointer">Can we tailor the agenda?</summary>
+                <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Absolutely. Private sessions are customized to your stack, maturity, and goals.</p>
+            </details>
+            <details class="bg-white dark:bg-gray-800 rounded-md shadow-sm p-4">
+                <summary class="font-medium cursor-pointer">Do you offer public cohorts?</summary>
+                <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Yes. Join the interest list below to be notified about upcoming dates.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Registration CTA -->
+    <section id="register" class="mb-4 py-12 bg-indigo-600 dark:bg-indigo-800 rounded-lg text-center text-white">
+        <div class="container mx-auto px-6 max-w-xl">
+            <h2 class="text-3xl font-bold mb-4">Register Your Interest</h2>
+            <p class="mb-6 text-indigo-100 dark:text-indigo-200">Leave your email and preferences; we’ll get back with dates and options.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <label for="interest-email" class="sr-only">Email address</label>
+                <input type="email" name="interest-email" id="interest-email" class="flex-grow px-4 py-3 border border-indigo-400 dark:border-indigo-600 rounded-md shadow-sm focus:ring-white focus:border-white sm:text-sm" placeholder="Enter your email">
+                <button type="submit" class="px-6 py-3 font-semibold text-indigo-700 bg-white rounded-md shadow-md hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-indigo-700 dark:bg-indigo-100 dark:text-indigo-900 dark:hover:bg-indigo-200 transition duration-150 ease-in-out cursor-pointer">Notify Me</button>
+            </form>
+            <p class="text-xs mt-3 text-indigo-200">No spam. Unsubscribe any time.</p>
+        </div>
+    </section>
+
+</div> <!-- End Container -->
+
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-900 py-8 mt-8">
+    <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400 text-sm">
+        <p data-controller="copyright">
+            © <span data-copyright-target="year">2025</span> <a href="https://manuel.kiessling.net">Manuel Kießling</a>. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- The script tag will be injected by HtmlWebpackPlugin -->
+</body>
+
+</html>
+
+
+

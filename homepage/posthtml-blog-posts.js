@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import matter from "gray-matter";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -91,6 +92,40 @@ export default function blogPostsPlugin() {
                         });
                     }
                 }
+
+                if (file.endsWith(".md")) {
+                    // Parse front matter
+                    const filePath = path.join(blogDir, file);
+                    const content = fs.readFileSync(filePath, "utf8");
+                    const { data } = matter(content);
+                    const title = data.title;
+                    const summary = data.description || data.summary;
+                    const date = data.published_time || data.date;
+                    const author = data.author || "Unknown";
+                    const tags = Array.isArray(data.tags)
+                        ? data.tags
+                        : typeof data.tags === "string"
+                          ? data.tags
+                                .split(",")
+                                .map((t) => t.trim())
+                                .filter(Boolean)
+                          : [];
+                    const readTime = data.readTime || data.read_time || "";
+
+                    if (title && summary && date) {
+                        const base = path.basename(file, path.extname(file));
+                        blogPosts.push({
+                            title,
+                            summary,
+                            date,
+                            author,
+                            tags,
+                            readTime,
+                            filename: `${base}.html`,
+                            url: `blog/${base}.html`,
+                        });
+                    }
+                }
             });
         } catch (error) {
             console.warn("Warning: Could not read blog directory:", error.message);
@@ -157,6 +192,50 @@ export default function blogPostsPlugin() {
                                 attrs: {
                                     href: post.url,
                                     class: "inline-block text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium",
+                                },
+                                content: "Read More →",
+                            },
+                        ],
+                    };
+                });
+            }
+
+            // Populate compact list under hero section
+            if (node.tag === "div" && node.attrs && node.attrs.id === "blog-posts-compact-container") {
+                node.content = latestPosts.map((post) => {
+                    return {
+                        tag: "a",
+                        attrs: {
+                            href: post.url,
+                            class: "group bg-white dark:bg-gray-800 rounded-md px-4 py-3 shadow-sm flex items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer no-underline",
+                        },
+                        content: [
+                            {
+                                tag: "span",
+                                attrs: { class: "shrink-0 text-sm text-gray-600 dark:text-gray-300" },
+                                content: new Date(post.date).toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "short",
+                                    day: "numeric",
+                                }),
+                            },
+                            {
+                                tag: "div",
+                                attrs: { class: "min-w-0 flex-1" },
+                                content: [
+                                    {
+                                        tag: "p",
+                                        attrs: {
+                                            class: "truncate text-sm font-medium text-gray-900 dark:text-gray-100",
+                                        },
+                                        content: post.title,
+                                    },
+                                ],
+                            },
+                            {
+                                tag: "span",
+                                attrs: {
+                                    class: "shrink-0 text-blue-700 dark:text-blue-300 group-hover:underline text-sm font-medium",
                                 },
                                 content: "Read More →",
                             },
