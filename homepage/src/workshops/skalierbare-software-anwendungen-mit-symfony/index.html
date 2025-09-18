@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full scroll-smooth">
+
+<head>
+    <title>Workshop: Skalierbare Software-Anwendungen mit Symfony | DX·Tooling</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Praktischer, interaktiver Workshop: Wir bauen gemeinsam eine robuste Symfony-Anwendung und beleuchten Architektur, Qualitätstooling, Tests und AI-gestützte Entwicklung.">
+
+    <!-- Include FOUC guard script -->
+    <include src="partials/theme-fouc-guard.html"></include>
+
+    <!-- Link to CSS will be injected here by HtmlWebpackPlugin -->
+</head>
+
+<body class="h-full bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+
+<div class="container mx-auto px-4 py-12 max-w-5xl">
+
+    <!-- Topbar -->
+    <header class="mb-10">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="../../index.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">← Zurück zur Startseite</a>
+                <span class="hidden sm:inline text-gray-400">|</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">DX·Tooling</span>
+            </div>
+            <div data-controller="theme">
+                <button
+                    data-theme-target="toggleButton"
+                    data-action="click->theme#toggle"
+                    class="px-4 py-2 font-semibold text-sm text-white bg-purple-600 rounded-md shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-offset-gray-800 cursor-pointer"
+                >
+                    <!-- Text wird per Controller gesetzt -->
+                </button>
+            </div>
+        </div>
+
+        <!-- Local Nav -->
+        <nav class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            <a href="#ueberblick" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Überblick</a>
+            <a href="#agenda" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Agenda</a>
+            <a href="#organisatorisches" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Organisatorisches</a>
+            <a href="#trainer" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Trainer</a>
+            <a href="#faq" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">FAQ</a>
+            <a href="#anmeldung" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Anmeldung</a>
+        </nav>
+    </header>
+
+    <!-- Hero (with subtle effect) -->
+    <section
+        class="relative mb-16 text-center effects-container"
+        data-controller="hero-effects"
+        style="perspective: 1000px;"
+    >
+        <div
+            class="relative z-10 py-14 px-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-sm transition-transform duration-[1800ms] ease-in-out [.effects-active_&]:[transform:scale(1.02)]"
+            style="transform-style: preserve-3d;"
+        >
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-purple-700 dark:from-blue-700 dark:to-purple-800 bg-clip-text text-transparent [transform:translateZ(30px)] [.effects-active_&]:[transform:translateZ(0px)]">
+                Skalierbare Software‑Anwendungen mit Symfony
+            </h1>
+            <p class="text-lg text-gray-700 dark:text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed [transform:translateZ(60px)] [.effects-active_&]:[transform:translateZ(0px)]">
+                Praxisnaher, interaktiver Workshop: Wir entwickeln gemeinsam eine vollständige Symfony‑Anwendung und beleuchten Architektur, Qualitätstooling, Tests und AI‑gestützte Entwicklung.
+            </p>
+            <a href="#anmeldung" class="inline-block px-8 py-4 font-bold text-lg text-white bg-blue-600 rounded-md shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 transition [transform:translateZ(40px)] [.effects-active_&]:[transform:translateZ(0px)] cursor-pointer">
+                Interesse anmelden
+            </a>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">Kostenlos dank Sponsoring der JOBOO! GmbH, begrenzte Plätze.</p>
+        </div>
+    </section>
+
+    <!-- Überblick -->
+    <section id="ueberblick" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Worum es geht</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-green-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
+                <h3 class="text-xl font-semibold mb-2">Nachhaltige Architektur</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Vertikalen, klare Grenzen und Schnittstellen. Entscheidungen verstehen, die Skalierung und Änderbarkeit begünstigen.</p>
+            </div>
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.355a7.5 7.5 0 0 1-3 0m3 0a7.5 7.5 0 0 0-3 0m.375 0a7.5 7.5 0 0 1-3 0m3 0h.008v.008h-.008v-.008Zm-3 0a7.5 7.5 0 0 0-3 0m6 0a7.5 7.5 0 0 1-3 0m3 0a7.5 7.5 0 0 0-3 0" /></svg>
+                <h3 class="text-xl font-semibold mb-2">Qualität & Tooling</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Teststrategie, CI‑Hygiene, stabile Pipelines. Werkzeuge, die Tempo bringen ohne Chaos.</p>
+            </div>
+            <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                <svg class="mx-auto h-12 w-12 text-purple-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 00-3.09 3.09z" /></svg>
+                <h3 class="text-xl font-semibold mb-2">AI‑gestützte Entwicklung</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Agenten sinnvoll einsetzen: sicher, überprüfbar und wirksam im Alltag.</p>
+            </div>
+        </div>
+        
+        <!-- Impressionen / Bildstrecke -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <figure class="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+                <img
+                    src="../../static/images/symfony-workshop/symfony-workshop-teacher-and-participants-in-a-room-640x640.jpg"
+                    alt="Trainer und Teilnehmende in einem Raum während des Workshops"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="640"
+                    class="w-full h-56 object-cover"
+                />
+                <figcaption class="px-4 py-3 text-xs text-gray-600 dark:text-gray-400">Vor Ort: gemeinsames Arbeiten und Diskussionen</figcaption>
+            </figure>
+            <figure class="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+                <img
+                    src="../../static/images/symfony-workshop/symfony-workshop-participant-in-front-of-laptop-watching-the-video-conference-320x320.jpg"
+                    alt="Teilnehmer:in vor dem Laptop in der Videokonferenz"
+                    loading="lazy"
+                    decoding="async"
+                    width="320"
+                    height="320"
+                    class="w-full h-56 object-cover"
+                />
+                <figcaption class="px-4 py-3 text-xs text-gray-600 dark:text-gray-400">Remote: vollwertige Teilnahme per Zoom</figcaption>
+            </figure>
+            <figure class="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+                <img
+                    src="../../static/images/symfony-workshop/symfony-workshop-teacher-in-front-of-architecture-diagram-320x320.jpg"
+                    alt="Trainer vor einem Architekturdiagramm"
+                    loading="lazy"
+                    decoding="async"
+                    width="320"
+                    height="320"
+                    class="w-full h-56 object-cover"
+                />
+                <figcaption class="px-4 py-3 text-xs text-gray-600 dark:text-gray-400">Architektur: Konzepte anschaulich erklärt</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Agenda -->
+    <section id="agenda" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-gray-200">Agenda</h2>
+        <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <li>Eröffnung & Einführung, Verifizierung der Entwicklungsumgebungen aller Teilnehmenden</li>
+                <li>Erläuterung der zentralen Architektur‑Konzepte, Aufbau einer ersten einfachen Feature‑Vertikalen</li>
+                <li>Einführung und Aufbau des Software‑Quality‑Toolings inkl. Tests</li>
+                <li>Mittagspause</li>
+                <li>Ausbau der Funktionalität: Warum Vertikalen? Abgrenzung zu Monolithen und Microservices</li>
+                <li>Integration von Vertikalen: gegen Interfaces statt gegen Klassen implementieren; Hexagonal/Clean Architecture</li>
+                <li>Einführung einer API‑Schicht</li>
+                <li>Ausbau des webbasierten UI mit AI‑Tools und Living Styleguide</li>
+                <li>Abschluss & Ausblick</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Organisatorisches -->
+    <section id="organisatorisches" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Organisatorisches</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Dauer</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Ganztägig 9–18 Uhr. 1h Mittagspause (13–14 Uhr), kurze Pausen stündlich.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Teilnahme & Plätze</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Kostenlos dank Sponsoring der JOBOO! GmbH. Teilnahme nur nach Anmeldung, auf 15 Plätze begrenzt.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Format</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Vollständig online / remote über Zoom.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Aufzeichnung</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Der komplette Workshop wird aufgezeichnet und anschließend frei zugänglich veröffentlicht.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Sprache</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Deutsch. Fragen auf Englisch sind möglich und werden auf Englisch beantwortet.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-2">Vorbereitung</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Einrichtungshinweise kommen vorab per E‑Mail. Rückfragen sind bis zum Start jederzeit möglich.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 md:col-span-3">
+                <h3 class="text-lg font-semibold mb-2">Zertifikat</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Alle Teilnehmenden erhalten ein Zertifikat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über den Workshop-Leiter -->
+    <section id="trainer" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Über den Workshop‑Leiter</h2>
+        <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <div class="flex justify-center">
+                    <img
+                        src="../../static/images/symfony-workshop/symfony-workshop-portrait-of-teacher-manuel-kiessling-320x320.jpg"
+                        alt="Porträt von Manuel Kießling"
+                        loading="lazy"
+                        decoding="async"
+                        width="320"
+                        height="320"
+                        class="rounded-lg shadow-sm w-40 h-40 object-cover md:w-48 md:h-48"
+                    />
+                </div>
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-semibold mb-2">Manuel Kießling</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">
+                        Software‑Architekt, Programmierer, Linux‑ und AWS‑Admin, Buchautor und Vater von zwei Kindern.
+                        Verantwortet derzeit die technische Produktentwicklung bei der Online-Jobbörse JOBOO.
+                        Über 25 Jahre Erfahrung mit PHP/Symfony und modernen Software‑Architekturen.
+                    </p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">
+                        Berufliche Stationen unter anderem:
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1 mb-3">
+                        <li>Ehemaliger CTO von MyHammer.de</li>
+                        <li>Technischer Leiter für den eCommerce‑Relaunch von Galeria Kaufhof</li>
+                        <li>Autor von Fachbüchern mit über 40.000 verkauften Exemplaren</li>
+                    </ul>
+                    <a href="https://manuel.kiessling.net" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">Website besuchen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mb-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">Häufige Fragen</h2>
+        <div class="space-y-4 max-w-3xl mx-auto">
+            <details class="bg-white dark:bg-gray-800 rounded-md shadow-sm p-4">
+                <summary class="font-medium cursor-pointer">Für wen ist der Workshop geeignet?</summary>
+                <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Für Software‑Engineers, Tech‑Leads und Engineering‑Manager:innen, die robuste Symfony‑Anwendungen bauen wollen.</p>
+            </details>
+            <details class="bg-white dark:bg-gray-800 rounded-md shadow-sm p-4">
+                <summary class="font-medium cursor-pointer">Brauche ich Vorkenntnisse in Symfony?</summary>
+                <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Grundkenntnisse in PHP sind hilfreich. Symfony‑Basiswissen ist von Vorteil, aber nicht zwingend.</p>
+            </details>
+            <details class="bg-white dark:bg-gray-800 rounded-md shadow-sm p-4">
+                <summary class="font-medium cursor-pointer">Wird der Workshop aufgezeichnet?</summary>
+                <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Ja. Die Aufzeichnung wird nach dem Workshop frei zugänglich veröffentlicht.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Anmeldung CTA -->
+    <section id="anmeldung" class="mb-4 py-12 bg-indigo-600 dark:bg-indigo-800 rounded-lg text-center text-white">
+        <div class="container mx-auto px-6 max-w-xl">
+            <h2 class="text-3xl font-bold mb-4">Interesse anmelden</h2>
+            <p class="mb-6 text-indigo-100 dark:text-indigo-200">E‑Mail hinterlassen – wir melden uns mit Terminoptionen und Details.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <label for="interest-email" class="sr-only">E‑Mail‑Adresse</label>
+                <input type="email" name="interest-email" id="interest-email" class="flex-grow px-4 py-3 border border-indigo-400 dark:border-indigo-600 rounded-md shadow-sm focus:ring-white focus:border-white sm:text-sm" placeholder="E‑Mail‑Adresse eingeben">
+                <button type="submit" class="px-6 py-3 font-semibold text-indigo-700 bg-white rounded-md shadow-md hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-indigo-700 dark:bg-indigo-100 dark:text-indigo-900 dark:hover:bg-indigo-200 transition duration-150 ease-in-out cursor-pointer">Benachrichtige mich</button>
+            </form>
+            <p class="text-xs mt-3 text-indigo-200">Keine Werbung. Abmeldung jederzeit möglich.</p>
+        </div>
+    </section>
+
+</div> <!-- End Container -->
+
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-900 py-8 mt-8">
+    <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400 text-sm">
+        <p data-controller="copyright">
+            © <span data-copyright-target="year">2025</span> <a href="https://manuel.kiessling.net">Manuel Kießling</a>. Alle Rechte vorbehalten.
+        </p>
+    </div>
+    
+</footer>
+
+<!-- The script tag will be injected by HtmlWebpackPlugin -->
+</body>
+
+</html>
+
