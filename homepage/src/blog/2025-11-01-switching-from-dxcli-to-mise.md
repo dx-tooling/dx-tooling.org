@@ -11,7 +11,7 @@ readTime: "2 min read"
 
 The idea behind the DX·Tooling projects, and especially the *Enterprise Tooling for Symfony* (ETFS) offerings that we are currently working on, is to provide well-prepared, streamlined, very-opinionated, and very-batteries-included foundations for serious business software projects.
 
-A central pillar for this is *streamlined developer tooling* — that is, tooling which provides a well-defined, approachable, and easy-to-explore interface for everyone working on any of our codebases, as well as codebases based on our offerings.
+A central pillar for this is *streamlined developer tooling* — that is, tooling which provides a well-defined, approachable, and easy-to-explore interface for everyone working on any of our codebases, or codebases based on our offerings.
 
 *Streamlined* means that we don't want to force developers to jump between tools, ecosystems, and commands when handling typical day-to-day tasks.
 
