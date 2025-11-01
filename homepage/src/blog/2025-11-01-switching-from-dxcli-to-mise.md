@@ -4,7 +4,7 @@ description: "Our goal is to provide a consistent Developer Experience when inte
 author: "Manuel Kießling"
 published_time: "2025-11-01T12:26:00+00:00"
 tags: [tooling, dxcli, mise]
-readTime: "1 min read"
+readTime: "2 min read"
 ---
 
 # Background
@@ -29,3 +29,8 @@ However, it smelled of not-invented-here syndrome, and some research revealed th
 
 We thus swallowed our pride and have begun migrating our projects over to mise — some first steps can be seen with https://github.com/dx-tooling/etfs-shared-bundle/pull/3 and https://github.com/dx-tooling/maas-webapp/pull/14.
 
+# Why mise-en-place is an upgrade
+
+While dxcli is mostly a composable task runner, which mise is too, the latter also brings project-specific tool- and env-var-management to the table.
+
+Check out the [mise demo page and documentation](https://mise.jdx.dev/demo.html) for more info.
