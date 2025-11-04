@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+
+<head>
+    <title>Enterprise Tooling for Symfony | DX·Tooling</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Serious SaaS starter kit for Symfony teams: setup wizard, multi-language support, dev tooling, and production-ready workflows." />
+
+    <include src="partials/theme-fouc-guard.html"></include>
+</head>
+
+<body class="h-full bg-gray-50 text-gray-900 transition-colors duration-200 dark:bg-gray-900 dark:text-gray-100">
+
+    <div class="container mx-auto max-w-6xl px-4 py-12">
+
+        <header class="mb-12 space-y-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <a href="../index.html"
+                    class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">←
+                    Back to DX·Tooling</a>
+
+                <div data-controller="theme">
+                    <button data-theme-target="toggleButton" data-action="click->theme#toggle"
+                        class="inline-flex items-center gap-2 rounded-md bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-purple-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus-visible:ring-indigo-400">
+                        <!-- Text populated by controller -->
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Enterprise Tooling for Symfony</h1>
+                <p class="mt-3 max-w-3xl text-sm text-gray-600 dark:text-gray-400">A production-ready SaaS starter kit that
+                    accelerates teams from idea to shipping with sensible defaults, automation, and internationalisation
+                    built in.</p>
+            </div>
+
+            <nav aria-label="Page sections">
+                <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-300">
+                    <li><a href="#hero"
+                            class="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-700 shadow-sm transition-colors hover:border-indigo-400 hover:bg-indigo-100 hover:text-indigo-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-indigo-500/40 dark:bg-indigo-900/40 dark:text-indigo-200 dark:hover:border-indigo-300 dark:hover:bg-indigo-800/60 dark:hover:text-indigo-100">Overview</a>
+                    </li>
+                    <li><a href="#kit"
+                            class="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-700 shadow-sm transition-colors hover:border-indigo-400 hover:bg-indigo-100 hover:text-indigo-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-indigo-500/40 dark:bg-indigo-900/40 dark:text-indigo-200 dark:hover:border-indigo-300 dark:hover:bg-indigo-800/60 dark:hover:text-indigo-100">Starter
+                            Kit</a></li>
+                    <li><a href="#testimonials"
+                            class="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-700 shadow-sm transition-colors hover:border-indigo-400 hover:bg-indigo-100 hover:text-indigo-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-indigo-500/40 dark:bg-indigo-900/40 dark:text-indigo-200 dark:hover:border-indigo-300 dark:hover:bg-indigo-800/60 dark:hover:text-indigo-100">Testimonials</a>
+                    </li>
+                    <li><a href="#process"
+                            class="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-700 shadow-sm transition-colors hover:border-indigo-400 hover:bg-indigo-100 hover:text-indigo-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-indigo-500/40 dark:bg-indigo-900/40 dark:text-indigo-200 dark:hover:border-indigo-300 dark:hover:bg-indigo-800/60 dark:hover:text-indigo-100">Process</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-700 shadow-sm transition-colors hover:border-indigo-400 hover:bg-indigo-100 hover:text-indigo-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-indigo-500/40 dark:bg-indigo-900/40 dark:text-indigo-200 dark:hover:border-indigo-300 dark:hover:bg-indigo-800/60 dark:hover:text-indigo-100">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="hero" class="mb-20" data-controller="hero-effects">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-50 via-white to-blue-100 p-8 shadow-sm dark:from-gray-800/80 dark:via-gray-900 dark:to-indigo-900/40">
+                <div class="space-y-10">
+                    <div class="space-y-6 max-w-3xl">
+                        <p class="text-sm font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-300">Don't
+                            just build software.</p>
+                        <h2 class="text-4xl font-extrabold leading-tight text-gray-900 dark:text-white">Ship
+                            <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">products</span>
+                            with confidence.</h2>
+                        <p class="text-lg text-gray-700 dark:text-gray-200">Skip weeks of scaffolding. Our serious SaaS
+                            starter kit for Symfony teams gets you from repository to revenue in record time—without
+                            compromising code quality, internationalisation, or developer experience.</p>
+                        <div class="flex flex-col gap-3 sm:flex-row">
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Get
+                                Started</a>
+                            <a href="#kit"
+                                class="inline-flex items-center justify-center rounded-md border border-indigo-600 px-6 py-3 text-sm font-semibold text-indigo-600 transition-colors hover:border-indigo-700 hover:text-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-indigo-400 dark:text-indigo-300 dark:hover:border-indigo-300 dark:hover:text-indigo-200">Explore
+                                the Kit</a>
+                        </div>
+                    </div>
+                    <figure class="overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/672645b7de8d744ff50836b3_Hurdling-Hero-Image-final.png"
+                            alt="Product illustration for Enterprise Tooling for Symfony"
+                            class="h-full w-full object-cover" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview" class="mb-20">
+            <div class="grid gap-12 md:grid-cols-2 md:items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100">The serious SaaS starter kit for
+                        Symfony is here.</h3>
+                    <p class="text-base text-gray-700 dark:text-gray-300">Skip the tedious plumbing and fast-forward to
+                        building the features you care about. The Enterprise Tooling starter kit combines best-practice
+                        architecture, opinionated defaults, and a guided setup so that your team ships value almost
+                        immediately.</p>
+                    <p class="text-base text-gray-700 dark:text-gray-300">Launch your first product in hours, not weeks.
+                        From authentication and organisation onboarding to code style enforcement and deployment
+                        checklists—we've built the guardrails so you can focus on what makes your product unique.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">What you get out of the box</h4>
+                        <ul class="mt-4 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-indigo-500"></span>
+                                Guided setup wizard minimising time on the command line.</li>
+                            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-indigo-500"></span>
+                                Multi-language SEO and content support from day one.</li>
+                            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-indigo-500"></span>
+                                Robust dev helper scripts, Messenger integration, and automated QA tooling.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kit" class="mb-20">
+            <div class="mb-12 text-center">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Starter Kit Highlights</h3>
+                <p class="mt-3 text-base text-gray-600 dark:text-gray-400">Every module is production-proven and designed
+                    to grow with your product and your engineering team.</p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f2aa_Images%20Cards%2001.jpg"
+                        alt="Setup wizard interface" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Guided Setup Wizard</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Kick off new projects in minutes. 95% of the
+                            configuration happens through an intuitive, web-based wizard—no endless CLI scripts.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67193f3e3ca9150c01cbfaaf_Integration-Image-i18n-SEO-Urls.png"
+                        alt="Multi-language SEO URLs" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Multi-Language SEO URLs</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Localise content and URLs for every market.
+                            Delight users and search engines alike with fully translated navigational structures.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f288_Images%20Cards%2003.jpg"
+                        alt="PHP configuration" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Sensible PHP Setup &amp;
+                            Config</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Battle-tested conventions, configuration, and
+                            environment management tuned for long-term maintainability.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f28b_Images%20Cards%2004.jpg"
+                        alt="Developer helper scripts" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Ready-to-use Dev Helper Scripts</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Ship faster with curated scripts covering
+                            common workflows, data seeding, health checks, and continuous delivery tasks.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f285_Images%20Cards%2002.jpg"
+                        alt="Multi-language content" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Multi-Language Support</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Serve audiences worldwide with localisation
+                            baked into UI components, routing, and content governance.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f288_Images%20Cards%2003.jpg"
+                        alt="Magic links authentication" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Magic Links Authentication</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Deliver frictionless sign-in flows with secure,
+                            token-based magic links supported out of the box.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f28b_Images%20Cards%2004.jpg"
+                        alt="Tailwind light and dark mode" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Tailwind Light &amp; Dark Mode</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Beautiful, accessible UI defaults powered by
+                            Tailwind with theme toggling integrated with our Stimulus controller.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/671a761f23a39b2a931a4b60_Integration-Image-Messenger.jpg"
+                        alt="Symfony Messenger integration" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Symfony Messenger Ready</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Async processing, queues, and background jobs
+                            preconfigured with Messenger so you can scale confidently.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/6719455603b1bb4c247bd697_Integration-Image-Org-Invite.png"
+                        alt="Organisation invite workflow" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">User-to-Org Invite Workflow</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Support organisations, teams, and shared
+                            resources with ready-made flows for inviting and managing members.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/671a705ad7ab098d65749526_Integration-Image-PHP-CS-Fixer.jpg"
+                        alt="PHP CS Fixer automation" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Code Style Enforcement</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Maintain a healthy codebase with PHP CS Fixer
+                            and formatting rules preconfigured for long-term consistency.</p>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200 transition-transform hover:-translate-y-1 dark:bg-gray-800 dark:ring-gray-700">
+                    <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/671a720d2ad1f63031cb4cf5_Integration-Image-PHPStan.jpg"
+                        alt="Static analysis dashboard" class="h-56 w-full object-cover" loading="lazy" />
+                    <div class="space-y-3 p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Static Analysis Done Right</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Catch entire classes of bugs early with
+                            PHPStan configured at max level and CI-ready reporting.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="testimonials" class="mb-20">
+            <div class="mb-12 text-center">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Teams shipping with confidence</h3>
+                <p class="mt-3 text-base text-gray-600 dark:text-gray-400">Hear how organisations use the starter kit to
+                    accelerate delivery and customer value.</p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2">
+                <article class="rounded-2xl bg-white p-8 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                    <div class="mb-4 flex items-center gap-3">
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f334_Testimonial%2001.jpg"
+                            alt="Portrait of Claudia Weber" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-gray-100">Claudia Weber</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Director Engineering, Craftline</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">“We shipped our first customer-facing module within
+                        a week. The starter kit kept Symfony best practices intact while removing all the boilerplate.”</p>
+                </article>
+
+                <article class="rounded-2xl bg-white p-8 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                    <div class="mb-4 flex items-center gap-3">
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f336_Testimonial%2003.jpg"
+                            alt="Portrait of Mateo Silva" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-gray-100">Mateo Silva</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Head of Platform, ShipLogic</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">“Organisation invites, localisation, and
+                        role-based access were already wired up. Our team focused on product logic instead of plumbing.”</p>
+                </article>
+
+                <article class="rounded-2xl bg-white p-8 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                    <div class="mb-4 flex items-center gap-3">
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f314_Testimonial%2004.jpg"
+                            alt="Portrait of Aisha Khan" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-gray-100">Aisha Khan</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Product Lead, MetroHire</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">“CI templates, PHPStan at max level, and helper
+                        scripts meant new teammates were productive on day one.”</p>
+                </article>
+
+                <article class="rounded-2xl bg-white p-8 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700">
+                    <div class="mb-4 flex items-center gap-3">
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f335_Testimonial%2002.jpg"
+                            alt="Portrait of Lars Petersen" class="h-12 w-12 rounded-full object-cover" loading="lazy" />
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-gray-100">Lars Petersen</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Engineering Manager, Stackwave</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">“Messenger queues and dev-helper commands were ready
+                        to go. We rolled out background jobs in production the same day.”</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="process" class="mb-20">
+            <div class="mb-12 flex flex-col gap-4 text-center">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Your launch roadmap in three steps</h3>
+                <p class="text-base text-gray-600 dark:text-gray-400">Move from evaluation to production rollout with
+                    a guided process tuned for Symfony teams.</p>
+            </div>
+
+            <div class="space-y-10">
+                <article
+                    class="grid gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700 md:grid-cols-[1.2fr_1fr] md:items-center">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-300">
+                            <span class="uppercase tracking-wide">Phase</span>
+                            <span class="h-3 w-px bg-indigo-200 dark:bg-indigo-600"></span>
+                            <span>01</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Discovery &amp; Planning</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Audit your current Symfony stack, confirm
+                            deployment targets, and map the starter kit modules you need.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Book
+                            a Discovery Call</a>
+                    </div>
+                    <div>
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f2ac_Stack%20Images%2004.jpg"
+                            alt="Integration illustration" class="w-full rounded-2xl object-cover" loading="lazy" />
+                    </div>
+                </article>
+
+                <article
+                    class="grid gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700 md:grid-cols-[1.2fr_1fr] md:items-center">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-300">
+                            <span class="uppercase tracking-wide">Phase</span>
+                            <span class="h-3 w-px bg-indigo-200 dark:bg-indigo-600"></span>
+                            <span>02</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Configuration &amp; Customisation</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Adapt branding, localisation, user onboarding,
+                            and CI pipelines to match your product and team workflow.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Tailor
+                            Your Kit</a>
+                    </div>
+                    <div>
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f2b4_Stack%20Images%2003.jpg"
+                            alt="Optimisation illustration" class="w-full rounded-2xl object-cover" loading="lazy" />
+                    </div>
+                </article>
+
+                <article
+                    class="grid gap-8 rounded-3xl bg-white p-8 shadow-md ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700 md:grid-cols-[1.2fr_1fr] md:items-center">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-300">
+                            <span class="uppercase tracking-wide">Phase</span>
+                            <span class="h-3 w-px bg-indigo-200 dark:bg-indigo-600"></span>
+                            <span>03</span>
+                        </div>
+                        <h4 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Launch &amp; Continuous Delivery</h4>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Ship your first feature set, automate quality
+                            gates, and keep improvements flowing with our helper scripts and docs.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Launch
+                            with Confidence</a>
+                    </div>
+                    <div>
+                        <img src="https://cdn.prod.website-files.com/67093dab2e448d1b4d53f1f7/67093dac2e448d1b4d53f2b2_Stack%20Images%2002.jpg"
+                            alt="Innovation illustration" class="w-full rounded-2xl object-cover" loading="lazy" />
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-4">
+            <div
+                class="rounded-3xl bg-indigo-600 px-6 py-12 text-center text-white shadow-lg dark:bg-indigo-700/90 dark:shadow-indigo-950/30">
+                <h3 class="text-3xl font-bold">Ready to get started?</h3>
+                <p class="mt-4 text-base text-indigo-100">Book a walkthrough, explore pricing, or talk to our team about
+                    tailoring the starter kit to your organisation.</p>
+                <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <a href="/contact"
+                        class="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-indigo-700 shadow-md transition-transform hover:-translate-y-0.5 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-600">Contact
+                        Us</a>
+                    <a href="/features"
+                        class="inline-flex items-center justify-center rounded-md border border-white/70 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-600">Learn
+                        More</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="bg-gray-100 py-8 dark:bg-gray-950/60">
+        <div class="container mx-auto max-w-6xl px-4 text-center text-sm text-gray-600 dark:text-gray-400">
+            <p data-controller="copyright">
+                © <span data-copyright-target="year">2025</span> <a href="https://manuel.kiessling.net"
+                    class="hover:underline">Manuel Kießling</a>. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts injected by HtmlWebpackPlugin -->
+</body>
+
+</html>
+
+
