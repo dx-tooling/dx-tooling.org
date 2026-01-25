@@ -81,6 +81,6 @@ SiteBuilder is currently in active development. We're working on:
 SiteBuilder is open source and available on GitHub. We'd love your feedback as we continue to develop this tool.
 
 - [View on GitHub](https://github.com/dx-tooling/sitebuilder-webapp)
-- [SiteBuilder Homepage](https://sitebuilder.dx-tooling.org)
+- [SiteBuilder Homepage](https://dx-tooling.org/sitebuilder/)
 
 If you're tired of being the content bottleneck for your team, give SiteBuilder a try. And if you have ideas for how we can make it better, open an issue or reach out—we're building this for teams like yours.
