@@ -134,14 +134,14 @@ export default function blogPostsPlugin() {
         // Sort blog posts by date (newest first)
         blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        // Limit to latest 6 posts for the landing page
-        const latestPosts = blogPosts.slice(0, 6);
+        // For homepage compact list: show first 5, rest are expandable
+        const VISIBLE_COUNT = 5;
 
         // Find the blog section and populate it
         tree.walk((node) => {
             if (node.tag === "div" && node.attrs && node.attrs.id === "blog-posts-container") {
-                // Clear existing content and add blog posts
-                node.content = latestPosts.map((post) => {
+                // Clear existing content and add blog posts (limit to 6 for card view)
+                node.content = blogPosts.slice(0, 6).map((post) => {
                     const tags = post.tags.map((tag) => ({
                         tag: "span",
                         attrs: {
@@ -200,15 +200,21 @@ export default function blogPostsPlugin() {
                 });
             }
 
-            // Populate compact list under hero section
+            // Populate compact list under hero section (all posts, with expandable hidden items)
             if (node.tag === "div" && node.attrs && node.attrs.id === "blog-posts-compact-container") {
-                node.content = latestPosts.map((post) => {
+                node.content = blogPosts.map((post, index) => {
+                    const isHidden = index >= VISIBLE_COUNT;
+                    const attrs = {
+                        href: post.url,
+                        class: "group bg-white dark:bg-gray-800 rounded-md px-4 py-3 shadow-sm flex items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer no-underline",
+                    };
+                    // Mark items beyond VISIBLE_COUNT for the expandable list controller
+                    if (isHidden) {
+                        attrs["data-expandable-list-target"] = "hiddenItem";
+                    }
                     return {
                         tag: "a",
-                        attrs: {
-                            href: post.url,
-                            class: "group bg-white dark:bg-gray-800 rounded-md px-4 py-3 shadow-sm flex items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors cursor-pointer no-underline",
-                        },
+                        attrs,
                         content: [
                             {
                                 tag: "span",
@@ -238,6 +244,107 @@ export default function blogPostsPlugin() {
                                     class: "shrink-0 text-blue-700 dark:text-blue-300 group-hover:underline text-sm font-medium",
                                 },
                                 content: "Read More →",
+                            },
+                        ],
+                    };
+                });
+            }
+
+            // Populate full blog listing page (all posts)
+            if (node.tag === "div" && node.attrs && node.attrs.id === "blog-posts-all-container") {
+                node.content = blogPosts.map((post) => {
+                    const tags = post.tags.map((tag) => ({
+                        tag: "span",
+                        attrs: {
+                            class: "px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded",
+                        },
+                        content: tag,
+                    }));
+
+                    return {
+                        tag: "article",
+                        attrs: { class: "bg-white dark:bg-gray-800 rounded-lg shadow-md p-6" },
+                        content: [
+                            {
+                                tag: "div",
+                                attrs: {
+                                    class: "flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3",
+                                },
+                                content: [
+                                    {
+                                        tag: "time",
+                                        attrs: { datetime: post.date },
+                                        content: new Date(post.date).toLocaleDateString("en-US", {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "numeric",
+                                        }),
+                                    },
+                                    post.readTime ? { tag: "span", content: "•" } : "",
+                                    post.readTime ? { tag: "span", content: post.readTime } : "",
+                                    { tag: "span", content: "•" },
+                                    { tag: "span", content: post.author },
+                                ].filter(Boolean),
+                            },
+                            {
+                                tag: "h2",
+                                attrs: { class: "text-xl font-bold text-gray-900 dark:text-white mb-2" },
+                                content: [
+                                    {
+                                        tag: "a",
+                                        attrs: {
+                                            href: post.filename,
+                                            class: "hover:text-blue-600 dark:hover:text-blue-400 transition-colors",
+                                        },
+                                        content: post.title,
+                                    },
+                                ],
+                            },
+                            {
+                                tag: "p",
+                                attrs: { class: "text-gray-600 dark:text-gray-300 mb-4 leading-relaxed" },
+                                content: post.summary,
+                            },
+                            {
+                                tag: "div",
+                                attrs: { class: "flex flex-wrap items-center justify-between gap-4" },
+                                content: [
+                                    {
+                                        tag: "div",
+                                        attrs: { class: "flex flex-wrap gap-2" },
+                                        content: tags,
+                                    },
+                                    {
+                                        tag: "a",
+                                        attrs: {
+                                            href: post.filename,
+                                            class: "inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium",
+                                        },
+                                        content: [
+                                            "Read more",
+                                            {
+                                                tag: "svg",
+                                                attrs: {
+                                                    class: "w-4 h-4",
+                                                    fill: "none",
+                                                    viewBox: "0 0 24 24",
+                                                    "stroke-width": "2",
+                                                    stroke: "currentColor",
+                                                },
+                                                content: [
+                                                    {
+                                                        tag: "path",
+                                                        attrs: {
+                                                            "stroke-linecap": "round",
+                                                            "stroke-linejoin": "round",
+                                                            d: "M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3",
+                                                        },
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
                             },
                         ],
                     };
