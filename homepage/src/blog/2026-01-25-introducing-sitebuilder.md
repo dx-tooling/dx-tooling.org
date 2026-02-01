@@ -7,6 +7,14 @@ tags: [SiteBuilder, AI, Content Editing, Git, Symfony]
 readTime: "4 min read"
 ---
 
+![SiteBuilder: content editor, landing page result, and GitHub PR for the changes.](https://dx-tooling.org/sitebuilder-assets/webapp-screenshots/web-versions/SiteBuilder-content-editor-landing-page-preview-and-GitHub-PR-for-changes-1600x987.png)
+
+*Describe in chat → see the result → changes land in a GitHub PR. The full loop.*
+
+*SiteBuilder is the content management tool that creators love to use and engineering loves to support.*
+
+SiteBuilder is an open-source tool that lets non-technical teams edit web content through chat while engineers keep Git workflows and full control. Marketing describes changes in plain language; an AI agent makes the edits; every change goes through a pull request for review.
+
 # The Problem We're Solving
 
 If you're an engineer on a team with marketing, content, or product people, you've probably experienced this: someone needs to update a headline, fix a typo, or add a new testimonial to a landing page. It's a 30-second change, but it requires you to context-switch, make the edit, commit, push, and deploy.
